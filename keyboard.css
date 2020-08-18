@@ -1,0 +1,99 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000;
+  background-image: url("./assets/background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.keyboard {
+  display: flex;
+  border: 2px ridge black;
+  box-shadow: 5px 5px 20px 1px black;
+  opacity: 0.95;
+}
+
+.key {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 5px;
+  height: calc(var(--width) * 5);
+  width: var(--width);
+  font-family: "Georgia", sans-serif;
+  font-size: 13px;
+}
+
+.white {
+  --width: 60px;
+  background-color: white;
+  border: 0.5px solid #202020;
+  box-shadow: 0px 0px 20px black;
+}
+
+.white.active {
+  background-color: #DCDCDC;
+  box-shadow: 0px 0px 10px black inset;
+}
+
+.black {
+  --width: 30px;
+  color: #DCDCDC;
+  background-color: black;
+  box-shadow: 0px 0px 10px black;
+  margin-left: calc(var(--width) / -2);
+  margin-right: calc(var(--width) / -2);
+  z-index: 2;
+}
+
+.black.active {
+  background-color: #151515;
+  box-shadow: 0px 0px 5px 0.5px #DCDCDC inset;
+}
+
+@media (max-width: 900px) {
+  .key {
+    font-size: 12px;
+  }
+
+  .white {
+    --width: 40px;
+    box-shadow: 0px 0px 15px black;
+  }
+
+  .black {
+    --width: 20px;
+  }
+
+  @media (max-width: 600px) {
+    .white {
+      --width: 25px;
+      box-shadow: 0px 0px 10px black;
+      color: white;
+    }
+
+    .white.active {
+      background-color: #DCDCDC;
+      color: #DCDCDC;
+      box-shadow: 0px 0px 5px black inset;
+    }
+
+    .black {
+      --width: 16px;
+      color: black;
+    }
+
+    .black.active {
+      background-color: #151515;
+      color: #151515;
+      box-shadow: 0px 0px 5px 0.5px #DCDCDC inset;
+    }
+  }
